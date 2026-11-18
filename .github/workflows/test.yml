@@ -1,9 +1,7 @@
 name: test
 
 on:
-  push:
-    tags:
-      - "[0-9]+.[0-9]+"
+  workflow_call:   # run only from docker.yml (before building), so a tag push doesn't run the tests twice
 
 jobs:
   test:
